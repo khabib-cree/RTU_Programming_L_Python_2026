@@ -30,14 +30,22 @@ Examples (these are also used to check your work):
 """
 
 
-def analyze_sentence(text: str) -> tuple[int, int, bool]:
-    """Return (length, word count, contains 'python') for the given text."""
-    # TODO: implement function logic
-    raise NotImplementedError("analyze_sentence() is not implemented yet")
+def analyze_sentence(sentence: str, keyword: str) -> tuple:
+    """
+    Analyze a sentence: return word count and whether the keyword is present (case-insensitive).
 
+    >>> analyze_sentence("Python is a great programming language.", "python")
+    (6, True)
+    >>> analyze_sentence("Learning C and Python at RTU.", "Java")
+    (6, False)
+    """
+    words = sentence.split()
+    word_count = len(words)
+    has_keyword = keyword.lower() in sentence.lower()
+    return (word_count, has_keyword)
 
 if __name__ == "__main__":
-    # Keep all input() calls inside this block, otherwise the autograder
-    # cannot import your file.
-    # TODO: read sentence from input, call function, and print results
-    pass
+    sent = input("Enter a sentence: ")
+    kw = input("Enter a keyword to check: ")
+    count, found = analyze_sentence(sent, kw)
+    print(f"Word count: {count} | Keyword present: {found}")
