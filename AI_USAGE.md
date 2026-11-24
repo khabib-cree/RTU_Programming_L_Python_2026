@@ -12,7 +12,7 @@ No AI tools were used.
 
 ## Conversation links
 
--https://gemini.google.com/app/fbe84968ca536578
+-https://share.gemini.google/2B73IjxnWcFE
 
 ## What I used them for
 
